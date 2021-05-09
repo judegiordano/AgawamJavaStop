@@ -21,9 +21,3 @@ jobs:
       run: npm ci
       env:
         HOST: ${{ secrets.HOST }}
-
-    # - name: build project
-    #   run: npm run postinstall
-    #   env:
-    #     HOST: ${{ secrets.HOST }}
-
