@@ -38,6 +38,7 @@ const Home = ({
 			<Head>
 				<title>Agawam Java Stop</title>
 				<meta name="description" content="Agawam Java Stop" />
+				<meta name="author" content="Jude Giordano" />
 				<link rel="icon" href="/java-stop-logo.jpg" />
 			</Head>
 
