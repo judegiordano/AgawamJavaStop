@@ -37,6 +37,11 @@ const Home = ({
 		<div className={styles.container}>
 			<Head>
 				<title>Agawam Java Stop</title>
+				<meta charSet="UTF-8" />
+				<meta name="node application" content="A simple web application" />
+				<meta name="keywords" content="HTML,CSS,XML,JavaScript" />
+				<meta name="Description" content="Agawam Java Stop Menu" />
+				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 				<meta name="description" content="Agawam Java Stop" />
 				<meta name="author" content="Jude Giordano" />
 				<link rel="icon" href="/java-stop-logo.jpg" />
