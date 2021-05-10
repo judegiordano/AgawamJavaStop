@@ -1,11 +1,12 @@
-import { GetStaticProps } from 'next'
-import axios from 'axios'
-import Head from 'next/head'
+import React from "react";
+import { GetStaticProps } from "next";
+import axios from "axios";
+import Head from "next/head";
 
-import styles from '../styles/Home.module.css'
-import { DrinkAccordion } from '../Components/DrinkAccordion'
-import { ScrollToTop } from '../Components/ScrollToTop'
-import { SocialBar } from '../Components/SocialBar'
+import styles from "../styles/Home.module.css";
+import { DrinkAccordion } from "../Components/DrinkAccordion";
+import { ScrollToTop } from "../Components/ScrollToTop";
+import { SocialBar } from "../Components/SocialBar";
 
 interface IDrink {
 	name: string,
@@ -15,7 +16,6 @@ interface IDrink {
 }
 
 interface IHomeProps {
-	drinks: IDrink[],
 	chocolate: IDrink[],
 	whiteChocolate: IDrink[],
 	caramel: IDrink[],
@@ -24,15 +24,14 @@ interface IHomeProps {
 	other: IDrink[]
 }
 
-const Home = ({
-	drinks,
+const Home: React.FC<IHomeProps> = ({
 	chocolate,
 	whiteChocolate,
 	caramel,
 	vanilla,
 	sugarFree,
 	other
-}: IHomeProps) => {
+}: IHomeProps): JSX.Element => {
 	return (
 		<div className={styles.container}>
 			<Head>
@@ -49,9 +48,9 @@ const Home = ({
 
 			<SocialBar />
 
-			<h2 style={{fontWeight: "lighter"}}>Agawam Java Stop Menu</h2>
+			<h2 style={{ fontWeight: "lighter" }}>Agawam Java Stop Menu</h2>
 
-			<div style={{textAlign: "center", width: "100%" }}>
+			<div style={{ textAlign: "center", width: "100%" }}>
 				<DrinkAccordion title="chocolate" drinks={chocolate} />
 				<DrinkAccordion title="vanilla" drinks={vanilla} />
 				<DrinkAccordion title="white chocolate" drinks={whiteChocolate} />
@@ -61,12 +60,12 @@ const Home = ({
 			</div>
 
 			<footer className={styles.footer}>
-				developed by <a target="_blank" href="https://www.facebook.com/jude.giordano.1">Jude Giordano</a> &#169; { new Date().getFullYear() }
-      		</footer>
+				developed by <a target="_blank" href="https://www.facebook.com/jude.giordano.1" rel="noreferrer">Jude Giordano</a> &#169; {new Date().getFullYear()}
+			</footer>
 			<ScrollToTop />
 		</div>
-	)
-}
+	);
+};
 
 export const getStaticProps: GetStaticProps = async () => {
 
@@ -93,7 +92,7 @@ export const getStaticProps: GetStaticProps = async () => {
 			other
 		},
 		revalidate: 60
-	}
-}
+	};
+};
 
 export default Home;

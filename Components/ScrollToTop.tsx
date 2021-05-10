@@ -3,7 +3,7 @@ import IconButton from "@material-ui/core/IconButton";
 import ArrowUpwardIcon from "@material-ui/icons/ArrowUpward";
 import { CSSProperties } from "@material-ui/styles";
 
-export const ScrollToTop = () => {
+export const ScrollToTop: React.FC = (): JSX.Element => {
 	return (
 		<div style={styles.root}>
 			<IconButton onClick={() => window["scrollTo"]({top: 0, behavior: "smooth"})} style={{padding: "0"}}>
@@ -26,4 +26,4 @@ const styles = {
 		fontSize: "20px",
 		position: "fixed",
 	}
-} as CSSProperties
+} as CSSProperties;

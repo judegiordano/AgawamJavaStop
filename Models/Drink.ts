@@ -1,10 +1,10 @@
 import mongoose, { Document, Schema } from "mongoose";
 
 export interface IDrink extends Document {
-    name: string,
-    recipe: string[],
-    sugarFreeOption: boolean,
-    isACtive: boolean
+	name: string,
+	recipe: string[],
+	sugarFreeOption: boolean,
+	isACtive: boolean
 }
 
 const Drink = new Schema(
@@ -13,12 +13,12 @@ const Drink = new Schema(
 			type: String,
 			required: true
 		},
-        recipe: {
-            type: Array,
-        },
-        sugarFreeOption: {
-            type: Boolean
-        },
+		recipe: {
+			type: Array,
+		},
+		sugarFreeOption: {
+			type: Boolean
+		},
 		isACtive: {
 			type: Boolean,
 			default: true
