@@ -1,6 +1,6 @@
 {
   "name": "agawamjavastop",
-  "version": "0.1.0",
+  "version": "2.0.2",
   "private": true,
   "author": "Jude Giordano",
   "homepage": "https://www.agawamjavastop.com",
@@ -14,6 +14,9 @@
   ],
   "license": "MIT",
   "scripts": {
+	"docker:build": "docker build -t agawam-java-stop-dev .",
+	"docker:run": "docker run -d --env-file .env --rm -p 3000:3000 agawam-java-stop-dev",
+	"docker:stop": "docker stop ",
 	"lint": "eslint --fix --ext .ts,.tsx .",
     "postinstall": "npm run build",
     "dev": "cross-env NODE_OPTIONS='--inspect' next",
