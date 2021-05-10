@@ -2,6 +2,17 @@
   "name": "agawamjavastop",
   "version": "0.1.0",
   "private": true,
+  "author": "Jude Giordano",
+  "homepage": "https://www.agawamjavastop.com",
+  "description": "react application for local coffee chop",
+  "keywords": [
+	  "next.js",
+	  "typescript",
+	  "node",
+	  "react",
+	  "mongodb"
+  ],
+  "license": "MIT",
   "scripts": {
 	"lint": "eslint --fix --ext .ts,.tsx .",
     "postinstall": "npm run build",
