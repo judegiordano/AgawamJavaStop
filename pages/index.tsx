@@ -1,19 +1,13 @@
 import React from "react";
 import { GetStaticProps } from "next";
 import axios from "axios";
-import Head from "next/head";
 
 import styles from "../styles/Home.module.css";
 import { DrinkAccordion } from "../Components/DrinkAccordion";
 import { ScrollToTop } from "../Components/ScrollToTop";
 import { SocialBar } from "../Components/SocialBar";
-
-interface IDrink {
-	name: string,
-	recipe: string[],
-	sugarFreeOption: boolean,
-	isACtive: boolean
-}
+import { AppHead } from "../Components/AppHead";
+import { AppFooter } from "../Components/AppFooter";
 
 interface IHomeProps {
 	chocolate: IDrink[],
@@ -35,17 +29,7 @@ const Home: React.FC<IHomeProps> = ({
 
 	return (
 		<div className={styles.container}>
-			<Head>
-				<title>Agawam Java Stop</title>
-				<meta charSet="UTF-8" />
-				<meta name="node application" content="A simple web application" />
-				<meta name="keywords" content="HTML,CSS,XML,JavaScript" />
-				<meta name="Description" content="Agawam Java Stop Menu" />
-				<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-				<meta name="description" content="Agawam Java Stop" />
-				<meta name="author" content="Jude Giordano" />
-				<link rel="icon" href="/java-stop-logo.jpg" />
-			</Head>
+			<AppHead title="Agawam Java Stop" />
 
 			<SocialBar />
 
@@ -60,9 +44,7 @@ const Home: React.FC<IHomeProps> = ({
 				<DrinkAccordion title="other" drinks={other} />
 			</div>
 
-			<footer className={styles.footer}>
-				developed by <a target="_blank" href="https://www.facebook.com/jude.giordano.1" rel="noreferrer">Jude Giordano</a> &#169; {new Date().getFullYear()}
-			</footer>
+			<AppFooter />
 			<ScrollToTop />
 		</div>
 	);

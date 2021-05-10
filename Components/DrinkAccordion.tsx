@@ -2,13 +2,6 @@ import React from "react";
 import { AccordionDetails, AccordionSummary, Accordion, Typography } from "@material-ui/core";
 import { ExpandMore } from "@material-ui/icons";
 
-interface IDrink {
-	name: string,
-	recipe: string[],
-	sugarFreeOption: boolean,
-	isACtive: boolean
-}
-
 interface IDrinkAccordion {
 	title: string,
 	drinks: IDrink[]
@@ -57,4 +50,4 @@ const styles = {
 		marginBottom: "5px",
 		border: "1px solid gray"
 	}
-};
+} as IStyles;

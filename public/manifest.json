@@ -1,0 +1,17 @@
+{
+	"name": "Agawam Java Stop",
+	"short_name": "Java Stop",
+	"description": "Agawam Java Stop Menu",
+	"start_url": "/",
+	"display": "standalone",
+	"theme_color": "#b29074",
+	"background_color": "#7d540f",
+	"orientation": "portrait-primary",
+	"icons": [
+		{
+			"src": "/java-stop-logo.png",
+			"type": "image/png",
+			"sizes": "748x748"
+		}
+	]
+}

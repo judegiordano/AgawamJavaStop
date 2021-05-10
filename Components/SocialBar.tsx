@@ -6,17 +6,17 @@ export const SocialBar: React.FC = (): JSX.Element => {
 	return (
 		<div>
 			<a target="_blank" href="https://www.facebook.com/Agawamsjavastop" rel="noreferrer">
-				<IconButton>
+				<IconButton aria-label="facebookLink">
 					<Facebook />
 				</IconButton>
 			</a>
 			<a href="tel:+014137860000">
-				<IconButton>
+				<IconButton aria-label="phoneButton">
 					<Call />
 				</IconButton>
 			</a>
 			<a target="_blank" href="https://www.instagram.com/agawamsjavastop/" rel="noreferrer">
-				<IconButton>
+				<IconButton aria-label="instagramLink">
 					<Instagram />
 				</IconButton>
 			</a>
