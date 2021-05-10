@@ -1,25 +1,23 @@
 import React from "react";
-import FacebookIcon from "@material-ui/icons/Facebook";
-import CallIcon from "@material-ui/icons/Call";
-import IconButton from "@material-ui/core/IconButton";
-import InstagramIcon from "@material-ui/icons/Instagram";
+import { IconButton } from "@material-ui/core";
+import { Instagram, Facebook, Call } from "@material-ui/icons";
 
 export const SocialBar: React.FC = (): JSX.Element => {
 	return (
 		<div>
 			<a target="_blank" href="https://www.facebook.com/Agawamsjavastop" rel="noreferrer">
 				<IconButton>
-					<FacebookIcon />
+					<Facebook />
 				</IconButton>
 			</a>
 			<a href="tel:+014137860000">
 				<IconButton>
-					<CallIcon />
+					<Call />
 				</IconButton>
 			</a>
 			<a target="_blank" href="https://www.instagram.com/agawamsjavastop/" rel="noreferrer">
 				<IconButton>
-					<InstagramIcon />
+					<Instagram />
 				</IconButton>
 			</a>
 		</div>

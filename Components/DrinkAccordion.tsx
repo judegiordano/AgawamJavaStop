@@ -1,9 +1,6 @@
 import React from "react";
-import Accordion from "@material-ui/core/Accordion";
-import AccordionSummary from "@material-ui/core/AccordionSummary";
-import AccordionDetails from "@material-ui/core/AccordionDetails";
-import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
-import Typography from "@material-ui/core/Typography";
+import { AccordionDetails, AccordionSummary, Accordion, Typography } from "@material-ui/core";
+import { ExpandMore } from "@material-ui/icons";
 
 interface IDrink {
 	name: string,
@@ -22,7 +19,7 @@ export const DrinkAccordion: React.FC<IDrinkAccordion> = ({ title, drinks }: IDr
 		<Accordion
 			TransitionProps={{ unmountOnExit: true }}
 			style={{ margin: "auto", padding: "10px", marginTop: "5px", marginBottom: "5px", maxWidth: "700px" }}>
-			<AccordionSummary expandIcon={<ExpandMoreIcon />}>
+			<AccordionSummary expandIcon={<ExpandMore />}>
 				<Typography style={{ width: "100%", textTransform: "uppercase" }}>{title}</Typography>
 			</AccordionSummary>
 			<AccordionDetails>
@@ -41,7 +38,7 @@ export const DrinkAccordion: React.FC<IDrinkAccordion> = ({ title, drinks }: IDr
 									paddingBottom: "5px",
 									fontWeight: "lighter"
 								}}>
-									{drink.recipe.toString().replace(/,/gmi, " - ")}
+									{ drink.recipe.toString().replace(/,/gmi, " - ") }
 								</h4>
 							</div>
 						))
