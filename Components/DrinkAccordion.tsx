@@ -6,25 +6,27 @@ import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 import Typography from "@material-ui/core/Typography";
 
 interface IDrink {
-    name: string,
-    recipe: string[],
-    sugarFreeOption: boolean,
-    isACtive: boolean
+	name: string,
+	recipe: string[],
+	sugarFreeOption: boolean,
+	isACtive: boolean
 }
 
 interface IDrinkAccordion {
-    title: string,
-    drinks: IDrink[]
+	title: string,
+	drinks: IDrink[]
 }
 
 export const DrinkAccordion: React.FC<IDrinkAccordion> = ({ title, drinks }: IDrinkAccordion): JSX.Element => {
 	return (
-		<Accordion style={{margin: "auto", padding: "10px", marginTop: "5px", marginBottom: "5px", maxWidth: "700px"}}>
+		<Accordion
+			TransitionProps={{ unmountOnExit: true }}
+			style={{ margin: "auto", padding: "10px", marginTop: "5px", marginBottom: "5px", maxWidth: "700px" }}>
 			<AccordionSummary expandIcon={<ExpandMoreIcon />}>
-				<Typography style={{width: "100%", textTransform: "uppercase"}}>{title}</Typography>
+				<Typography style={{ width: "100%", textTransform: "uppercase" }}>{title}</Typography>
 			</AccordionSummary>
 			<AccordionDetails>
-				<div style={{width: "100%", textAlign: "center"}}>
+				<div style={{ width: "100%", textAlign: "center" }}>
 					{
 						drinks.map((drink, index) => (
 							<div style={styles.drink} key={index}>
@@ -39,7 +41,7 @@ export const DrinkAccordion: React.FC<IDrinkAccordion> = ({ title, drinks }: IDr
 									paddingBottom: "5px",
 									fontWeight: "lighter"
 								}}>
-									{ drink.recipe.toString().replace(/,/gmi, " - ") }
+									{drink.recipe.toString().replace(/,/gmi, " - ")}
 								</h4>
 							</div>
 						))

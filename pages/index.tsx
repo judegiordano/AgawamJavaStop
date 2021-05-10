@@ -32,6 +32,7 @@ const Home: React.FC<IHomeProps> = ({
 	sugarFree,
 	other
 }: IHomeProps): JSX.Element => {
+
 	return (
 		<div className={styles.container}>
 			<Head>
