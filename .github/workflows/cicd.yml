@@ -21,3 +21,6 @@ jobs:
       run: npm ci
       env:
         HOST: ${{ secrets.HOST }}
+        DEEPLORE_APPCODE: ${{ secrets.DEEPLORE_APPCODE }}
+        DEEPLORE_APPSUBSCRIPTION: ${{ secrets.DEEPLORE_APPSUBSCRIPTION }}
+        API_ENDPOINT: ${{ secrets.API_ENDPOINT }}
