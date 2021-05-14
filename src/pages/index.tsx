@@ -52,21 +52,14 @@ const Home: React.FC<IHomeProps> = ({
 
 export const getStaticProps: GetStaticProps = async () => {
 
-	const response = await Rest.Get("/drinks");
-	const { drinks } = response.data;
-
-	// TODO: lets move this filter logic to the backend
-	const chocolate = drinks.filter(a => a.recipe.includes("chocolate"));
-	const whiteChocolate = drinks.filter(a => a.recipe.includes("white chocolate"));
-	const vanilla = drinks.filter(a => a.recipe.includes("vanilla"));
-	const caramel = drinks.filter(a => a.recipe.includes("caramel"));
-	const sugarFree = drinks.filter(a => a.sugarFreeOption);
-	const other = drinks.filter(a =>
-		!a.recipe.includes("chocolate") &&
-		!a.recipe.includes("white chocolate") &&
-		!a.recipe.includes("vanilla") &&
-		!a.recipe.includes("caramel")
-	);
+	const response = await Rest.Get("/drinks/popular");
+	const { drinks,
+		chocolate,
+		whiteChocolate,
+		vanilla,
+		caramel,
+		sugarFree,
+		other } = response.data;
 
 	return {
 		props: {
