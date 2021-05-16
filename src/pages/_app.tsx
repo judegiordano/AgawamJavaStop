@@ -1,7 +1,12 @@
 import React from "react";
 import { AppProps } from "next/dist/next-server/lib/router/router";
 import LogRocket from "logrocket";
-LogRocket.init("nwnxka/agawam-java-stop");
+
+import { Config } from "../Services/Config";
+
+if(Config.Options.NEXT_PUBLIC_IS_PROD)
+	LogRocket.init("nwnxka/agawam-java-stop");
+else LogRocket.init("nwnxka/agawam-java-stop-dev");
 
 import "../styles/globals.css";
 

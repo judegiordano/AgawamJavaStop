@@ -19,7 +19,7 @@
     "docker:stop": "docker stop ",
     "lint": "eslint --fix --ext .ts,.tsx .",
     "postinstall": "npm run build",
-    "dev": "cross-env NODE_OPTIONS='--inspect' next",
+    "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start -p $PORT"
   },

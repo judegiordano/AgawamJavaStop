@@ -10,3 +10,6 @@ https://app.logrocket.com/
 npm i
 npm run dev
 ```
+
+## Recent Lighthouse Report
+![lighthouse report](./Capture.PNG "Lighthouse Report")
