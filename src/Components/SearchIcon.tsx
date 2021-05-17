@@ -6,7 +6,7 @@ import { SearchOutlined } from "@material-ui/icons";
 export const SearchIcon: React.FC = (): JSX.Element => {
 	return (
 		<div style={styles.root}>
-			<IconButton aria-label="scrollTop" style={{padding: "0"}}>
+			<IconButton aria-label="searchIcon" style={{padding: "0"}}>
 				<Link href="/search">
 					<SearchOutlined />
 				</Link>

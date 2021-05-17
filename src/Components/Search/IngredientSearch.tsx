@@ -3,7 +3,7 @@ import { Autocomplete } from "@material-ui/lab";
 import { TextField, Checkbox } from "@material-ui/core";
 import { CheckBox, CheckBoxOutlineBlank } from "@material-ui/icons";
 
-import { DrinkCard } from "./DrinkCard";
+import { DrinkCard } from "../DrinkCard";
 
 interface IIngredientSearch {
 	drinks: IDrink[],
