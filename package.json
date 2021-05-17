@@ -19,6 +19,8 @@
     "docker:stop": "docker stop ",
     "lint": "eslint --fix --ext .ts,.tsx .",
     "postinstall": "npm run build",
+    "export": "npm run build && next export",
+	"serve": "serve -s out -p $PORT",
     "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start -p $PORT"
@@ -49,6 +51,7 @@
     "@typescript-eslint/parser": "^4.22.1",
     "eslint": "^7.26.0",
     "eslint-plugin-react": "^7.23.2",
+    "serve": "^11.3.2",
     "typescript": "^4.2.4"
   },
   "cacheDirectories": [
