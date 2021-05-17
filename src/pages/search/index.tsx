@@ -5,7 +5,7 @@ import { Rest } from "../../Services/Rest";
 import { ScrollToTop } from "../../Components/ScrollToTop";
 import { HomeIcon } from "../../Components/HomeIcon";
 import { SearchTabs } from "../../Components/Search/SearchTabs";
-import { AppHead } from "../../Components/AppHead";
+import { AppLayout } from "../../Components/AppLayout";
 
 interface Iindex {
 	ingredients: string[],
@@ -15,12 +15,13 @@ interface Iindex {
 
 const index: React.FC<Iindex> = ({ ingredients, drinks, drinkNames }: Iindex): JSX.Element => {
 	return (
-		<div style={styles.root}>
-			<AppHead title="Search" />
-			<SearchTabs ingredients={ingredients} drinks={drinks} drinkNames={drinkNames} />
-			<ScrollToTop />
-			<HomeIcon />
-		</div>
+		<AppLayout>
+			<div style={styles.root}>
+				<SearchTabs ingredients={ingredients} drinks={drinks} drinkNames={drinkNames} />
+				<ScrollToTop />
+				<HomeIcon />
+			</div>
+		</AppLayout>
 	);
 };
 

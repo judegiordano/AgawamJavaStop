@@ -1,14 +1,12 @@
 import React from "react";
 import { GetStaticProps } from "next";
 
-import styles from "../styles/Home.module.css";
 import { DrinkAccordion } from "../Components/DrinkAccordion";
 import { ScrollToTop } from "../Components/ScrollToTop";
 import { SocialBar } from "../Components/SocialBar";
-import { AppHead } from "../Components/AppHead";
-import { AppFooter } from "../Components/AppFooter";
 import { Rest } from "../Services/Rest";
 import { SearchIcon } from "../Components/SearchIcon";
+import { AppLayout } from "../Components/AppLayout";
 
 interface IHomeProps {
 	chocolate: IDrink[],
@@ -29,26 +27,24 @@ const Home: React.FC<IHomeProps> = ({
 }: IHomeProps): JSX.Element => {
 
 	return (
-		<div className={styles.container}>
-			<AppHead title="Agawam Java Stop" />
+		<AppLayout>
+			<div style={{width: "100%", textAlign: "center"}}>
+				<SocialBar />
+				<h2 style={{ fontWeight: "lighter" }}>Agawam Java Stop Menu</h2>
 
-			<SocialBar />
+				<div style={{ textAlign: "center", width: "100%" }}>
+					<DrinkAccordion title="chocolate" drinks={chocolate} />
+					<DrinkAccordion title="vanilla" drinks={vanilla} />
+					<DrinkAccordion title="white chocolate" drinks={whiteChocolate} />
+					<DrinkAccordion title="caramel" drinks={caramel} />
+					<DrinkAccordion title="sugar free" drinks={sugarFree} />
+					<DrinkAccordion title="other" drinks={other} />
+				</div>
 
-			<h2 style={{ fontWeight: "lighter" }}>Agawam Java Stop Menu</h2>
-
-			<div style={{ textAlign: "center", width: "100%" }}>
-				<DrinkAccordion title="chocolate" drinks={chocolate} />
-				<DrinkAccordion title="vanilla" drinks={vanilla} />
-				<DrinkAccordion title="white chocolate" drinks={whiteChocolate} />
-				<DrinkAccordion title="caramel" drinks={caramel} />
-				<DrinkAccordion title="sugar free" drinks={sugarFree} />
-				<DrinkAccordion title="other" drinks={other} />
+				<ScrollToTop />
+				<SearchIcon />
 			</div>
-
-			<AppFooter />
-			<ScrollToTop />
-			<SearchIcon />
-		</div>
+		</AppLayout>
 	);
 };
 
