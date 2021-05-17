@@ -25,5 +25,6 @@ const styles = {
 		display: "inline-grid",
 		fontSize: "20px",
 		position: "fixed",
+		zIndex: 1
 	}
 } as CSSProperties;

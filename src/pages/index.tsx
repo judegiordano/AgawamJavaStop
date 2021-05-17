@@ -8,23 +8,28 @@ import { SocialBar } from "../Components/SocialBar";
 import { AppHead } from "../Components/AppHead";
 import { AppFooter } from "../Components/AppFooter";
 import { Rest } from "../Services/Rest";
+import { SearchIcon } from "../Components/SearchIcon";
 
 interface IHomeProps {
+	drinks: IDrink[],
 	chocolate: IDrink[],
 	whiteChocolate: IDrink[],
 	caramel: IDrink[],
 	vanilla: IDrink[],
 	sugarFree: IDrink[],
-	other: IDrink[]
+	other: IDrink[],
+	ingredients: string[]
 }
 
 const Home: React.FC<IHomeProps> = ({
+	drinks,
 	chocolate,
 	whiteChocolate,
 	caramel,
 	vanilla,
 	sugarFree,
-	other
+	other,
+	ingredients
 }: IHomeProps): JSX.Element => {
 
 	return (
@@ -46,20 +51,27 @@ const Home: React.FC<IHomeProps> = ({
 
 			<AppFooter />
 			<ScrollToTop />
+			<SearchIcon drinks={drinks} ingredients={ingredients} />
 		</div>
 	);
 };
 
 export const getStaticProps: GetStaticProps = async () => {
 
-	const response = await Rest.Get("/drinks/popular");
+	const allDrinks = await Rest.Get("/drinks/popular");
+	const recipes = await Rest.Get("/recipes/");
+
+	const {
+		ingredients
+	} = recipes.data;
+
 	const { drinks,
 		chocolate,
 		whiteChocolate,
 		vanilla,
 		caramel,
 		sugarFree,
-		other } = response.data;
+		other } = allDrinks.data;
 
 	return {
 		props: {
@@ -69,7 +81,8 @@ export const getStaticProps: GetStaticProps = async () => {
 			vanilla,
 			caramel,
 			sugarFree,
-			other
+			other,
+			ingredients
 		},
 		revalidate: 60
 	};

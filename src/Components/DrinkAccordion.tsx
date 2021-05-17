@@ -1,6 +1,7 @@
 import React from "react";
 import { AccordionDetails, AccordionSummary, Accordion, Typography } from "@material-ui/core";
 import { ExpandMore } from "@material-ui/icons";
+import { DrinkCard } from "./DrinkCard";
 
 interface IDrinkAccordion {
 	title: string,
@@ -19,21 +20,7 @@ export const DrinkAccordion: React.FC<IDrinkAccordion> = ({ title, drinks }: IDr
 				<div style={{ width: "100%", textAlign: "center" }}>
 					{
 						drinks.map((drink, index) => (
-							<div style={styles.drink} key={index}>
-								<h2 style={{
-									fontWeight: "lighter",
-									textTransform: "capitalize",
-									marginBottom: "5px"
-								}}>
-									{drink.name}
-								</h2>
-								<h4 style={{
-									paddingBottom: "5px",
-									fontWeight: "lighter"
-								}}>
-									{ drink.recipe.toString().replace(/,/gmi, " - ") }
-								</h4>
-							</div>
+							<DrinkCard drink={drink} key={index} />
 						))
 					}
 				</div>
@@ -41,13 +28,3 @@ export const DrinkAccordion: React.FC<IDrinkAccordion> = ({ title, drinks }: IDr
 		</Accordion>
 	);
 };
-
-const styles = {
-	drink: {
-		backgroundColor: "#f4b6434a",
-		margin: "auto",
-		marginTop: "5px",
-		marginBottom: "5px",
-		border: "1px solid gray"
-	}
-} as IStyles;

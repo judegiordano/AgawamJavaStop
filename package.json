@@ -20,7 +20,7 @@
     "lint": "eslint --fix --ext .ts,.tsx .",
     "postinstall": "npm run build",
     "export": "npm run build && next export",
-	"serve": "serve -s out -p $PORT",
+    "serve": "serve -s out -p $PORT",
     "dev": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start -p $PORT"
@@ -28,6 +28,7 @@
   "dependencies": {
     "@material-ui/core": "^4.11.4",
     "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.58",
     "axios": "^0.21.1",
     "cookie": "^0.4.1",
     "cross-env": "^7.0.3",
