@@ -1,14 +1,14 @@
 import Link from "next/link";
-import React from "react";
 import { IconButton } from "@material-ui/core";
-import { SearchOutlined } from "@material-ui/icons";
+import { HomeOutlined } from "@material-ui/icons";
+import React from "react";
 
-export const SearchIcon: React.FC = (): JSX.Element => {
+export const HomeIcon: React.FC = (): JSX.Element => {
 	return (
 		<div style={styles.root}>
 			<IconButton aria-label="scrollTop" style={{padding: "0"}}>
-				<Link href="/search">
-					<SearchOutlined />
+				<Link href="/">
+					<HomeOutlined />
 				</Link>
 			</IconButton>
 		</div>

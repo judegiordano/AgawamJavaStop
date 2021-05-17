@@ -12,10 +12,6 @@
 		"body": [
 			"import React from \"react\";",
 			"",
-			"interface IStyles {",
-			"\t[key: string]: React.CSSProperties",
-			"}",
-			"",
 			"interface I${TM_FILENAME_BASE} {",
 			"\tstyleProp?: IStyles",
 			"}",
