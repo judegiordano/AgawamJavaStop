@@ -1,4 +1,6 @@
-import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
+import { AxiosRequestConfig } from "axios";
+import { create, ApiResponse } from "apisauce";
+
 
 import { Config } from "./Config";
 
@@ -6,7 +8,7 @@ export class Rest {
 
 	private static readonly url = Config.Options.API_ENDPOINT
 
-	private static readonly client = axios.create({
+	private static readonly client = create({
 		baseURL: Rest.url,
 		headers: {
 			appcode: Config.Options.DEEPLORE_APPCODE,
@@ -15,7 +17,7 @@ export class Rest {
 	})
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	public static async Get(url: string, config?: AxiosRequestConfig): Promise<AxiosResponse<any>> {
+	public static async Get(url: string, config?: AxiosRequestConfig): Promise<ApiResponse<any>> {
 		try {
 			return await Rest.client.get(url, config);
 		} catch (error) {
@@ -24,7 +26,7 @@ export class Rest {
 	}
 
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
-	public static async Post(url: string, data?: unknown, config?: AxiosRequestConfig): Promise<AxiosResponse<any>> {
+	public static async Post(url: string, data?: unknown, config?: AxiosRequestConfig): Promise<ApiResponse<any>> {
 		try {
 			return await Rest.client.post(url, data, config);
 		} catch (error) {
