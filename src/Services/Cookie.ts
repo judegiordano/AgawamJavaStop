@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { serialize, CookieSerializeOptions } from "cookie";
 import { NextApiRequest, NextApiResponse } from "next";
 
@@ -10,7 +12,23 @@ export class Cookie {
 			res.setHeader("Set-Cookie", serialize("jid", value, {
 				httpOnly: true,
 				path: "/",
-				maxAge: 60 * 60 * 24 * 7, // 1 week
+				maxAge: 60 * 60 * 24, // 1 day
+				secure: Config.Options.IS_PROD,
+				signed: false,
+				sameSite: true
+			} as CookieSerializeOptions));
+		} catch (error) {
+			throw new Error(error);
+		}
+	}
+
+
+	public static SetCtxCookie(res: any, value: string): void {
+		try {
+			res.setHeader("Set-Cookie", serialize("jid", value, {
+				httpOnly: true,
+				path: "/",
+				maxAge: 60 * 60 * 24, // 1 day
 				secure: Config.Options.IS_PROD,
 				signed: false,
 				sameSite: true

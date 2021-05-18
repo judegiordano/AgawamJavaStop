@@ -8,3 +8,11 @@ declare interface IDrink {
 	sugarFreeOption: boolean,
 	isACtive: boolean
 }
+
+declare interface IAdmin {
+	id: number,
+	uid: string,
+	username: string,
+	tokenVersion: number,
+	createdAt: Date
+}

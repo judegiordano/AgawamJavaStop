@@ -8,6 +8,7 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
 		if (req.method != "POST") throw "method not allowed";
 
 		const token = Cookie.GetCookie(req);
+		console.log(token);
 
 		const response = await Rest.Post("admin/refresh", {}, { headers: { Authorization: `Bearer ${token}` } });
 		const { data } = response;

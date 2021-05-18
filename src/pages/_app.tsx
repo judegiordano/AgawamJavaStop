@@ -4,7 +4,7 @@ import LogRocket from "logrocket";
 
 import { Config } from "../Services/Config";
 
-if(Config.Options.NEXT_PUBLIC_IS_PROD)
+if(Config.Public.NEXT_PUBLIC_IS_PROD)
 	LogRocket.init("nwnxka/agawam-java-stop");
 else LogRocket.init("nwnxka/agawam-java-stop-dev");
 
