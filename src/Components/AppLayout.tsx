@@ -7,13 +7,15 @@ interface IAppLayout {
 }
 
 import styles from "../styles/Home.module.css";
+import { NavBar } from "./NavBar";
 
 export const AppLayout: React.FC<IAppLayout> = ({ children }: IAppLayout): JSX.Element => {
 	return (
 		<>
-			<div className={styles.container}>
+			<NavBar />
+			<div className={styles.container} style={{paddingTop: "50px"}}>
 				<AppHead title="Agawam Java Stop" />
-				{ children }
+				{children}
 				<AppFooter />
 			</div>
 		</>

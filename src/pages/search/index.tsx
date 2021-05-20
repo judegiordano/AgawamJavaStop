@@ -27,7 +27,8 @@ const index: React.FC<Iindex> = ({ ingredients, drinks, drinkNames }: Iindex): J
 
 const styles = {
 	root: {
-		textAlign: "center"
+		textAlign: "center",
+		paddingTop: "30px"
 	}
 } as IStyles;
 

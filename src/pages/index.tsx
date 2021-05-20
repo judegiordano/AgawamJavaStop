@@ -3,7 +3,6 @@ import { GetStaticProps } from "next";
 
 import { DrinkAccordion } from "../Components/DrinkAccordion";
 import { ScrollToTop } from "../Components/ScrollToTop";
-import { SocialBar } from "../Components/SocialBar";
 import { Rest } from "../Services/Rest";
 import { SearchIcon } from "../Components/SearchIcon";
 import { AppLayout } from "../Components/AppLayout";
@@ -28,8 +27,7 @@ const Home: React.FC<IHomeProps> = ({
 
 	return (
 		<AppLayout>
-			<div style={{width: "100%", textAlign: "center"}}>
-				<SocialBar />
+			<div style={{width: "100%", textAlign: "center", paddingTop: "10px"}}>
 				<h2 style={{ fontWeight: "lighter" }}>Agawam Java Stop Menu</h2>
 
 				<div style={{ textAlign: "center", width: "100%" }}>
