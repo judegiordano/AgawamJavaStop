@@ -7,10 +7,14 @@ interface IInput {
 	helperText: string,
 	error: boolean,
 	label: string,
-	type?: string
+	type?: string,
+	required?: boolean,
+	disabled?: boolean,
+	ref?: React.Ref<HTMLDivElement>,
+	value?: unknown
 }
 
-export const AppInput: React.FC<IInput> = ({ styleProp, onChange, error, helperText, label, type }: IInput): JSX.Element => {
+export const AppInput: React.FC<IInput> = ({ styleProp, onChange, error, helperText, label, type, required, disabled, ref, value }: IInput): JSX.Element => {
 	return (
 		<div style={{...styles.root, ...styleProp}}>
 			<TextField
@@ -18,9 +22,13 @@ export const AppInput: React.FC<IInput> = ({ styleProp, onChange, error, helperT
 				error={error}
 				helperText={helperText}
 				variant="outlined"
+				disabled={disabled}
 				onChange={onChange}
 				label={label}
+				required={required}
 				type={type}
+				ref={ref}
+				value={value}
 			/>
 		</div>
 	);

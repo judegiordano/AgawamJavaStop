@@ -66,3 +66,19 @@ export class ServerSideClient {
 		}
 	}
 }
+
+export class RestGeneric {
+
+	private static readonly Client = create({
+		baseURL: ""
+	});
+
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	public static async Post(url: string, data?: unknown, config?: AxiosRequestConfig): Promise<ApiResponse<any>> {
+		try {
+			return await RestGeneric.Client.post(url, data, config);
+		} catch (error) {
+			throw new Error(error);
+		}
+	}
+}

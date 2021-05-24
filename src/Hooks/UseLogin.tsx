@@ -24,12 +24,18 @@ export const UseLogin = (): IUseLogin => {
 		setLoading(true);
 		e.preventDefault();
 		const response = await RestPublic.Post("login", { username, password });
-		if (!response.ok){ 
+		if (!response.ok) {
 			setLoading(false);
+			setUsername("");
+			setPassword("");
 			setError(response.data.error);
 			return;
 		}
 		if (response.ok) {
+			setLoading(false);
+			setUsername("");
+			setPassword("");
+			setError("");
 			Router.push("/admin");
 			return;
 		}

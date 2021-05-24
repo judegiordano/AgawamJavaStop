@@ -4,7 +4,10 @@
 ```
 https://app.logrocket.com/
 ```
-
+## Captcha Info
+```
+https://www.google.com/recaptcha/admin/
+```
 ## Local Development
 ```
 npm i

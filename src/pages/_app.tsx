@@ -2,9 +2,9 @@ import React from "react";
 import { AppProps } from "next/dist/next-server/lib/router/router";
 import LogRocket from "logrocket";
 
-import { Config } from "../Services/Config";
+import { ClientConfig } from "../Services/ClientConfig";
 
-if(Config.Public.NEXT_PUBLIC_IS_PROD)
+if(ClientConfig.Public.NEXT_PUBLIC_IS_PROD)
 	LogRocket.init("nwnxka/agawam-java-stop");
 else LogRocket.init("nwnxka/agawam-java-stop-dev");
 

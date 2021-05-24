@@ -82,7 +82,7 @@ export const NavBar: React.FC<INavBar> = ({ styleProp }: INavBar): JSX.Element =
 					</ListItem>
 					<Divider />
 
-					<ListItem disabled button onClick={() => route("/contact")}>
+					<ListItem button onClick={() => route("/contact")}>
 						<ListItemIcon>
 							<MailOutline />
 						</ListItemIcon>

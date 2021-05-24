@@ -20,17 +20,23 @@ const login: React.FC = (): JSX.Element => {
 					<CardContent>
 						<form action="" onSubmit={login}>
 							<AppInput
+								required
 								error={error !== ""}
 								label="Username"
+								disabled={loading}
 								helperText={error}
 								onChange={e => setUsername(e.target.value)}
+								value={username}
 							/>
 							<AppInput
+								required
 								error={error !== ""}
+								disabled={loading}
 								label="Password"
 								helperText={error}
 								onChange={e => setPassword(e.target.value)}
 								type="password"
+								value={password}
 							/>
 							<AppButton
 								text="Login"
