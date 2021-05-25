@@ -13,7 +13,7 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
 		const response = await Rest.Post("admin/login", { username, password });
 		const { data } = response;
 
-		if (!data.ok) throw data.message || "internal error";
+		if (!data.ok) throw data.data || "internal error";
 
 		Cookie.SetCookie(res, data.token);
 		res.status(200).json({ ok: true, user: data.admin });
