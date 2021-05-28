@@ -2,6 +2,9 @@ import { NextApiRequest, NextApiResponse } from "next";
 
 import { Cookie } from "../../Services/Cookie";
 import { Rest } from "../../Services/Rest";
+import { Utility } from "../../Services/Utility";
+import limiter from "../../Middleware/RateLimit";
+
 
 export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
 	try {
@@ -9,6 +12,8 @@ export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> 
 
 		const { username, password } = req.body;
 		if (!username || !password) throw "invalid request body";
+
+		await Utility.RunMiddleware(req, res, limiter);
 
 		const response = await Rest.Post("admin/login", { username, password });
 		const { data } = response;
