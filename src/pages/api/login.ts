@@ -5,7 +5,6 @@ import { Rest } from "../../Services/Rest";
 import { Utility } from "../../Services/Utility";
 import limiter from "../../Middleware/RateLimit";
 
-
 export default async (req: NextApiRequest, res: NextApiResponse): Promise<void> => {
 	try {
 		if (req.method != "POST") throw "method not allowed";
